@@ -1,6 +1,6 @@
 # Html::Pipeline::RougeFilter
 
-[Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline)
+[Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline).
 
 ## Installation
 
