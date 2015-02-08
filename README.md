@@ -1,4 +1,4 @@
-# Html::Pipeline::RougeFilter
+# HTML::Pipeline::RougeFilter
 
 [Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline).
 
@@ -20,7 +20,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+pipeline = HTML::Pipeline.new [
+  HTML::Pipeline::MarkdownFilter,
+  HTML::Pipeline::RougeFilter
+]
+
+result = pipeline.call <<-CODE
+```ruby
+def foo
+  puts "foo"
+end
+```
+CODE
+
+result[:output].to_s
+```
+
+Prints
+
+```html
+<pre class="highlight highlight-ruby">
+  <code>
+    <span class="k">def</span>
+    <span class="nf">foo</span>
+    <span class="nb">puts</span>
+    <span class="s2">"foo"</span>
+    <span class="k">end</span>
+  </code>
+</pre>
+```
 
 ## Contributing
 
