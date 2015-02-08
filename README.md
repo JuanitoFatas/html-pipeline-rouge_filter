@@ -1,4 +1,4 @@
-# HTML::Pipeline::RougeFilter
+# HTML::Pipeline::RougeFilter [![Build Status](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter.svg)](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter)
 
 [Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline).
 
