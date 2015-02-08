@@ -20,22 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
-pipeline = HTML::Pipeline.new [
-  HTML::Pipeline::MarkdownFilter,
-  HTML::Pipeline::RougeFilter
-]
+    pipeline = HTML::Pipeline.new [
+      HTML::Pipeline::MarkdownFilter,
+      HTML::Pipeline::RougeFilter
+    ]
 
-result = pipeline.call <<-CODE
-```ruby
-def foo
-  puts "foo"
-end
-```
-CODE
+    result = pipeline.call <<-CODE
+    ```ruby
+    def foo
+      puts "foo"
+    end
+    ```
+    CODE
 
-result[:output].to_s
-```
+    result[:output].to_s
 
 Prints
 
