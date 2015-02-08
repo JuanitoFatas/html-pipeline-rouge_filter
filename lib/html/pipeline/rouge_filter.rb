@@ -3,6 +3,8 @@ require "html/pipeline/filter"
 
 require "rouge"
 
+require "active_support/core_ext/string/inflections"
+
 module HTML
   class Pipeline
     class RougeFilter < Filter
@@ -42,7 +44,8 @@ module HTML
       end
 
       def lexer_for(lang)
-        Rouge::Lexers::Shell.new(parent: lang)
+        lexer = "Rouge::Lexers::#{lang.camelize}".constantize
+        lexer.new(parent: lang)
       end
     end
   end

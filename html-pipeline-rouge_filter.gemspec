@@ -19,4 +19,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "html-pipeline", "~> 1.11"
   spec.add_dependency "rouge", "~> 1.8"
+  spec.add_dependency "activesupport"
 end
