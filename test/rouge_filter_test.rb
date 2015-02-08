@@ -23,8 +23,4 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     assert doc.css(".highlight-coffeescript").empty?
     assert !doc.css(".highlight-ruby").empty?
   end
-
-  def test_version
-    assert_equal HTML_Pipeline::RougeFilter::VERSION, "0.0.1"
-  end
 end
