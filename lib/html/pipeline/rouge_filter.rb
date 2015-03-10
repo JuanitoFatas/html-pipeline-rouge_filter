@@ -44,8 +44,7 @@ module HTML
       end
 
       def lexer_for(lang)
-        lexer = "Rouge::Lexers::#{lang.camelize}".constantize
-        lexer.new(parent: lang)
+        Rouge::Lexer.find_fancy(lang) || Rouge::Lexers::PlainText
       end
     end
   end
