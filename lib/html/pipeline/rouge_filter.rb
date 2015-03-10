@@ -27,10 +27,6 @@ module HTML
         doc
       end
 
-      def must_str(text)
-        text && text.to_s
-      end
-
       def highlight_with(lexer, text)
         formatter.format(lexer.lex(text))
       end
@@ -46,6 +42,12 @@ module HTML
       def lexer_for(lang)
         Rouge::Lexer.find_fancy(lang) || Rouge::Lexers::PlainText
       end
+
+      private
+
+        def must_str(text)
+          text && text.to_s
+        end
     end
   end
 end
