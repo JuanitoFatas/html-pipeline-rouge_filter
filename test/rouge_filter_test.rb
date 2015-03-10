@@ -44,14 +44,14 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello</pre>"
 
-    assert_equal filter.default_css_class, "highlight"
+    assert_equal "highlight", filter.default_css_class
   end
 
   def test_default_css_class_can_be_specified_by_context
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello</pre>", css_class: "superlight"
 
-    assert_equal filter.default_css_class, "superlight"
+    assert_equal "superlight", filter.default_css_class
   end
 
   def test_default_formatter
