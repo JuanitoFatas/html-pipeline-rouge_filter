@@ -44,7 +44,7 @@ module HTML
       end
 
       def lexer_for(lang)
-        lexer = Rouge::Lexer.find_fancy(lang) || Rouge::Lexers::PlainText
+        Rouge::Lexer.find_fancy(lang) || Rouge::Lexers::PlainText
       end
     end
   end
