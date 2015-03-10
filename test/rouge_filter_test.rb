@@ -23,4 +23,13 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     assert doc.css(".highlight-coffeescript").empty?
     assert !doc.css(".highlight-ruby").empty?
   end
+
+  def test_unrecognized_lexer_will_not_raise_error
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_nothing_raised do
+      filter.lexer_for("not_exist")
+    end
+  end
 end
