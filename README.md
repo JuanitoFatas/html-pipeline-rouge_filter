@@ -2,6 +2,8 @@
 
 [Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline).
 
+This RubyGem requires Ruby 2.0+.
+
 ## Installation
 
 Add this line to your application's Gemfile:

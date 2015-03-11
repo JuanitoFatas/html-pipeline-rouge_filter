@@ -32,4 +32,46 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
       filter.lexer_for("not_exist")
     end
   end
+
+  def test_highlight_with_ruby
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_equal %(<pre class="highlight"><code><span class="n">hello</span></code></pre>), filter.highlight_with(Rouge::Lexers::Ruby, "hello").chomp
+  end
+
+  def test_default_css_class
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_equal "highlight", filter.default_css_class
+  end
+
+  def test_default_css_class_can_be_specified_by_context
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>", css_class: "superlight"
+
+    assert_equal "superlight", filter.default_css_class
+  end
+
+  def test_default_formatter
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_kind_of Rouge::Formatters::HTML, filter.formatter
+  end
+
+  def test_default_lexer
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_equal Rouge::Lexers::PlainText, filter.lexer_for("not-exist")
+  end
+
+  def test_lexer_can_be_specified
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_kind_of Rouge::Lexers::Shell, filter.lexer_for("shell")
+  end
 end
