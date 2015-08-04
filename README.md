@@ -22,22 +22,29 @@ Or install it yourself as:
 
 ## Usage
 
-    pipeline = HTML::Pipeline.new [
-      HTML::Pipeline::MarkdownFilter,
-      HTML::Pipeline::RougeFilter
-    ]
+```ruby
+require 'html/pipeline'
+require 'html/pipeline/rouge_filter'
 
-    result = pipeline.call <<-CODE
+pipeline = HTML::Pipeline.new [
+  HTML::Pipeline::MarkdownFilter,
+  HTML::Pipeline::RougeFilter
+]
+
+result = pipeline.call <<-CODE.gsub(/^\s*/,'')
+
     ```ruby
     def foo
       puts "foo"
     end
     ```
+
     CODE
 
-    result[:output].to_s
+puts result[:output]
+```
 
-Prints
+Prints (without the linebreaks):
 
 ```html
 <pre class="highlight highlight-ruby">
