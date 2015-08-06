@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.2 - 2015.08.06
+
+- Allow to use with `HTML::Pipeline` >= 1.11 [#3](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/3) by @townsen
+
 ## 1.0.1 - 2015.03.10
 
 - Fix lexer finding logic [#1](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/1) by @JuanitoFatas
