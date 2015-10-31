@@ -7,6 +7,10 @@ group :development do
   gem "rake"
   gem "bundler"
   gem "pry"
+  gem "github-markdown"
+  gem "sanitize"
+  gem "gemoji"
+  gem "actionview"
 end
 
 group :test do
