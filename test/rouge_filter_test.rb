@@ -54,6 +54,20 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     assert_equal "superlight", filter.default_css_class
   end
 
+  def test_line_numbers
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>"
+
+    assert_equal false, filter.line_numbers
+  end
+
+  def test_line_numbers_can_be_specified_by_context
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello</pre>", line_numbers: true
+
+    assert_equal true, filter.line_numbers
+  end
+
   def test_default_formatter
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello</pre>"
