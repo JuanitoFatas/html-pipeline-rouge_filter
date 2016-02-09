@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Generate line numbers via `line_numbers` option in context hash [#5](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/5) by @lowjoel
+
 ## 1.0.2 - 2015.08.06
 
 - Allow to use with `HTML::Pipeline` >= 1.11 [#3](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/3) by @townsen

@@ -58,6 +58,9 @@ Prints (without the linebreaks):
 </pre>
 ```
 
+You can specify line numbers via `line_numbers` option in
+[context](https://github.com/jch/html-pipeline#examples) hash.
+
 ## Contributing
 
 1. Fork it ( https://github.com/juanitofatas/html-pipeline-rouge_filter/fork )
