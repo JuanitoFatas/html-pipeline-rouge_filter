@@ -88,4 +88,13 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     assert_kind_of Rouge::Lexers::Shell, filter.lexer_for("shell")
   end
+
+  def test_replacing_br
+    filter = RougeFilter.new \
+      "<pre lang='ruby'>hello<br>world</pre>", replace_br: true
+
+    doc = filter.call
+    assert_equal "<pre class=\"highlight highlight-ruby\"><code>"\
+                 "<span class=\"n\">hello</span>\n<span class=\"n\">world</span></code></pre>\n", doc.to_html
+  end
 end
