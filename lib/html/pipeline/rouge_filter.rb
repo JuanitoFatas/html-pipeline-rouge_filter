@@ -13,6 +13,7 @@ module HTML
           default   = must_str(context[:highlight])
           next unless lang = node["lang"] || default
           next unless lexer = lexer_for(lang)
+          node.css("br").each { |br| br.replace("\n") } if replace_br
           text = node.inner_text
           html = highlight_with(lexer, text)
           next if html.nil?
@@ -37,6 +38,10 @@ module HTML
 
       def line_numbers
         context[:line_numbers] || false
+      end
+
+      def replace_br
+        context[:replace_br] || false
       end
 
       def formatter(css_class: default_css_class)

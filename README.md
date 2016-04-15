@@ -58,8 +58,12 @@ Prints (without the linebreaks):
 </pre>
 ```
 
-You can specify line numbers via `line_numbers` option in
-[context](https://github.com/jch/html-pipeline#examples) hash.
+You can specify following options in
+[context](https://github.com/jch/html-pipeline#examples) hash:
+
+`line_numbers`: Line numbers will be displayed if set to true.
+
+`replace_br`: `<br>` tags in the code will be replaced with new line characters (`\n`) if set to true.
 
 ## Contributing
 
