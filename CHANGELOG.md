@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.4 - 2016.04.16
+
 - Replace `<br>` to newline via `replace_br` option in context hash [#7](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/7) by @allenwq
 
 ## 1.0.3 - 2016.02.10
