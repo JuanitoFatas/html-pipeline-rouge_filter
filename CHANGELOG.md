@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Replace `<br>` to newline via `replace_br` option in context hash [#7](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/7) by @allenwq
+
 ## 1.0.3 - 2016.02.10
 
 - Generate line numbers via `line_numbers` option in context hash [#5](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/5) by @lowjoel
