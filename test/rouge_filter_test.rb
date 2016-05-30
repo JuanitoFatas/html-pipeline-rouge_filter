@@ -95,6 +95,16 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     doc = filter.call
     assert_equal "<pre class=\"highlight highlight-ruby\"><code>"\
+                 "<span class=\"n\">hello</span>\n"\
+                 "<span class=\"n\">world</span></code></pre>\n", doc.to_html
+  end
+
+  def test_preprocess_html
+    filter = RougeFilter.new \
+      "<pre lang='ruby'> &nbsp;hello<br>world</pre>", preprocess_html: true
+
+    doc = filter.call
+    assert_equal "<pre class=\"highlight highlight-ruby\"><code>  "\
                  "<span class=\"n\">hello</span>\n<span class=\"n\">world</span></code></pre>\n", doc.to_html
   end
 end

@@ -13,8 +13,7 @@ module HTML
           default   = must_str(context[:highlight])
           next unless lang = node["lang"] || default
           next unless lexer = lexer_for(lang)
-          node.css("br").each { |br| br.replace("\n") } if replace_br
-          text = node.inner_text
+          text = preprocess_html(node)
           html = highlight_with(lexer, text)
           next if html.nil?
 
@@ -26,6 +25,15 @@ module HTML
         end
 
         doc
+      end
+
+      def preprocess_html(node)
+        node.css("br").each { |br| br.replace("\n") } if replace_br?
+        result = node.inner_text
+        return result unless preprocess_html?
+
+        result.tr!("\u00A0", ' ')
+        result
       end
 
       def highlight_with(lexer, text)
@@ -40,8 +48,12 @@ module HTML
         context[:line_numbers] || false
       end
 
-      def replace_br
-        context[:replace_br] || false
+      def replace_br?
+        context[:replace_br] || preprocess_html?
+      end
+
+      def preprocess_html?
+        context[:preprocess_html] || false
       end
 
       def formatter(css_class: default_css_class)
