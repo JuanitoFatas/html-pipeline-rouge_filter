@@ -95,6 +95,7 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     doc = filter.call
     assert_equal "<pre class=\"highlight highlight-ruby\"><code>"\
-                 "<span class=\"n\">hello</span>\n<span class=\"n\">world</span></code></pre>", doc.to_html
+                 "<span class=\"n\">hello</span>\n"\
+                 "<span class=\"n\">world</span></code></pre>", doc.to_html
   end
 end
