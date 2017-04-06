@@ -45,7 +45,7 @@ module HTML
       end
 
       def formatter(css_class: default_css_class)
-        Rouge::Formatters::HTML.new(css_class: css_class,
+        Rouge::Formatters::HTMLLegacy.new(css_class: css_class,
                                     line_numbers: line_numbers)
       end
 
