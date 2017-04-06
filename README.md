@@ -72,3 +72,15 @@ You can specify following options in
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## License, Contributor's Guidelines and Code of Conduct
+
+This project is open source under the MIT license, which means you have full access to the source code and can modify
+it to fit your own needs.
+
+This project subscribes to the
+[Moya Contributors Guidelines](https://github.com/Moya/contributors/blob/master/Community.md) which TLDR: means we give
+out push access easily and often.
+
+Contributors subscribe to the [Contributor Code of Conduct](http://contributor-covenant.org/version/1/4/) based on
+the [Contributor Covenant](http://contributor-covenant.org) version 1.4.
