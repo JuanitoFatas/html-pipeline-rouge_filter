@@ -72,7 +72,7 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello</pre>"
 
-    assert_kind_of Rouge::Formatters::HTML, filter.formatter
+    assert_kind_of Rouge::Formatters::HTMLLegacy, filter.formatter
   end
 
   def test_default_lexer
@@ -95,6 +95,6 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     doc = filter.call
     assert_equal "<pre class=\"highlight highlight-ruby\"><code>"\
-                 "<span class=\"n\">hello</span>\n<span class=\"n\">world</span></code></pre>\n", doc.to_html
+                 "<span class=\"n\">hello</span>\n<span class=\"n\">world</span></code></pre>", doc.to_html
   end
 end
