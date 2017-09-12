@@ -39,8 +39,8 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     result = filter.highlight_with(Rouge::Lexers::Ruby, "hello").chomp
 
-    assert_equal <<~EXPECTED.rstrip, result
-      <div class="highlight"><pre class="highlight"><code><span class="n">hello</span></code></pre></div>
+    assert_equal <<-EXPECTED.rstrip, result
+<div class="highlight"><pre class="highlight"><code><span class="n">hello</span></code></pre></div>
     EXPECTED
   end
 
@@ -99,9 +99,9 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
 
     result = filter.call.to_html
 
-    assert_equal <<~EXPECTED.rstrip, result
-      <div class="highlight highlight-ruby"><pre class="highlight"><code><span class="n">hello</span>
-      <span class="n">world</span></code></pre></div>
+    assert_equal <<-EXPECTED.rstrip, result
+<div class="highlight highlight-ruby"><pre class="highlight"><code><span class="n">hello</span>
+<span class="n">world</span></code></pre></div>
     EXPECTED
   end
 end
