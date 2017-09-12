@@ -7,6 +7,7 @@ group :development do
   gem "rake"
   gem "bundler"
   gem "pry"
+  gem "rubocop", "0.49.1" # same as houndci/hound's Gemfile.lock
 end
 
 group :test do
