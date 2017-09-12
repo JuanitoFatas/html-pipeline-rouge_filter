@@ -37,7 +37,11 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello</pre>"
 
-    assert_equal %(<pre class="highlight"><code><span class="n">hello</span></code></pre>), filter.highlight_with(Rouge::Lexers::Ruby, "hello").chomp
+    result = filter.highlight_with(Rouge::Lexers::Ruby, "hello").chomp
+
+    assert_equal <<~EXPECTED.rstrip, result
+      <div class="highlight"><pre class="highlight"><code><span class="n">hello</span></code></pre></div>
+    EXPECTED
   end
 
   def test_default_css_class
@@ -93,9 +97,11 @@ class HTML::Pipeline::RougeFilterTest < Minitest::Test
     filter = RougeFilter.new \
       "<pre lang='ruby'>hello<br>world</pre>", replace_br: true
 
-    doc = filter.call
-    assert_equal "<pre class=\"highlight highlight-ruby\"><code>"\
-                 "<span class=\"n\">hello</span>\n"\
-                 "<span class=\"n\">world</span></code></pre>", doc.to_html
+    result = filter.call.to_html
+
+    assert_equal <<~EXPECTED.rstrip, result
+      <div class="highlight highlight-ruby"><pre class="highlight"><code><span class="n">hello</span>
+      <span class="n">world</span></code></pre></div>
+    EXPECTED
   end
 end
