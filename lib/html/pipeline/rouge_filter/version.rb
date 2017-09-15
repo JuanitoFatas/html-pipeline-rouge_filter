@@ -2,6 +2,6 @@
 # and we don't want to define it here inadvertently
 module HTML_Pipeline
   class RougeFilter
-    VERSION = "1.0.5"
+    VERSION = "1.0.6"
   end
 end
