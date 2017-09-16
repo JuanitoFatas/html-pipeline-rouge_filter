@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.0.6
+
+- Soften rouge dependency to 2 <= x < 3 [#12](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/12) by @juanitofatas
+
 ## 1.0.5
 
 - Update rouge to v2.0.7 [#10](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/10) by @hibariya
