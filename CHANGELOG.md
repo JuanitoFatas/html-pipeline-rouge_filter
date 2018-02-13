@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.7
+
 - Soften rouge dependency to 2 <= x < 4 [#14](https://github.com/JuanitoFatas/html-pipeline-rouge_filter/pull/14) by @juanitofatas
 
 ## 1.0.6
