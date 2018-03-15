@@ -1,4 +1,8 @@
-# HTML::Pipeline::RougeFilter [![Build Status](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter.svg)](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter)
+# Please use [HTML::Pipeline's builtin `SyntaxHighlightFilter`](https://github.com/jch/html-pipeline/blob/a84d7fa441d545fc3bdd43d5003af67c53cfd2b8/lib/html/pipeline/syntax_highlight_filter.rb) instead.
+
+**This repository is no longer actively maintained.**
+
+## HTML::Pipeline::RougeFilter [![Build Status](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter.svg)](https://travis-ci.org/JuanitoFatas/html-pipeline-rouge_filter)
 
 [Rouge](https://github.com/jneen/rouge) integration for [HTML::Pipeline](https://github.com/jch/html-pipeline).
 
